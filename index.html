@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luméra Skincare — Luxury Beauty</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">✓</span>
+    <span id="toastMsg">Item added to cart</span>
+  </div>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar-header">
+      <h3>Your Cart <span id="cartSidebarCount">0</span></h3>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">Your cart is empty.</p>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        Total: <strong id="cartTotal">$0</strong>
+      </div>
+      <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- HEADER -->
+  <header id="header">
+    <nav>
+      <div class="logo-wrap">
+        <span class="logo-accent">✦</span>
+        <h1 class="logo">LUMÉRA</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="cart-btn" id="cartToggle">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span id="cartCount">0</span>
+      </button>
+      <button class="menu-btn" id="menuBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+      <ul>
+        <li><a href="#home" onclick="closeMobileNav()">Home</a></li>
+        <li><a href="#products" onclick="closeMobileNav()">Products</a></li>
+        <li><a href="#about" onclick="closeMobileNav()">About</a></li>
+        <li><a href="#testimonials" onclick="closeMobileNav()">Reviews</a></li>
+        <li><a href="#contact" onclick="closeMobileNav()">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-blob blob1"></div>
+      <div class="hero-blob blob2"></div>
+      <div class="hero-blob blob3"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">
+        <span class="eyebrow-line"></span>
+        Luxury Skincare Essentials
+        <span class="eyebrow-line"></span>
+      </p>
+      <h2 class="hero-heading">
+        Healthy Skin<br>
+        <em>Starts With</em><br>
+        Pure Care
+      </h2>
+      <p class="hero-text">
+        Premium skincare crafted with elegance, simplicity,<br class="desktop-br">
+        and ingredients your skin will love.
+      </p>
+      <div class="hero-actions">
+        <a href="#products" class="hero-btn-primary">Shop Collection</a>
+        <a href="#about" class="hero-btn-ghost">Our Story</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <strong>12K+</strong><span>Happy Customers</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <strong>100%</strong><span>Natural Ingredients</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <strong>Cruelty</strong><span>Free & Vegan</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <div class="hero-img-frame">
+        <img src="lumera.jpg" alt="Luméra skincare" />
+        <div class="img-badge">
+          <span>★ 4.9</span>
+          <small>2,300+ Reviews</small>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE STRIP -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>✦ Free Shipping Over $50</span>
+      <span>✦ Natural & Organic</span>
+      <span>✦ Cruelty Free</span>
+      <span>✦ Dermatologist Tested</span>
+      <span>✦ 30-Day Returns</span>
+      <span>✦ Vegan Formulas</span>
+      <span>✦ Free Shipping Over $50</span>
+      <span>✦ Natural & Organic</span>
+      <span>✦ Cruelty Free</span>
+      <span>✦ Dermatologist Tested</span>
+      <span>✦ 30-Day Returns</span>
+      <span>✦ Vegan Formulas</span>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">🌿</div>
+        <h4>Natural Ingredients</h4>
+        <p>Formulated with botanicals and pure actives</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🐰</div>
+        <h4>Cruelty Free</h4>
+        <p>Never tested on animals, ever</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">♻️</div>
+        <h4>Eco Packaging</h4>
+        <p>Sustainable, recyclable materials</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🔬</div>
+        <h4>Dermatologist Tested</h4>
+        <p>Clinically safe for all skin types</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH & FILTER -->
+  <section class="shop-controls" id="products">
+    <div class="shop-controls-inner">
+      <div class="search-wrap">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" placeholder="Search products…" autocomplete="off">
+        <button class="clear-search" id="clearSearch" style="display:none">✕</button>
+      </div>
+      <div class="filter-wrap">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="cleanser">Cleanser</button>
+        <button class="filter-btn" data-category="serum">Serum</button>
+        <button class="filter-btn" data-category="moisturizer">Moisturizer</button>
+      </div>
+      <div class="sort-wrap">
+        <select id="sortSelect">
+          <option value="default">Sort: Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name-asc">Name: A–Z</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products-section">
+    <div class="section-header">
+      <p class="section-tag">Our Collection</p>
+      <h2 class="section-title">Featured Products</h2>
+      <p id="productCount" class="product-count">Showing 6 products</p>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+    <div class="no-results" id="noResults" style="display:none">
+      <p>No products found. Try a different search.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-image-col">
+        <div class="about-img-stack">
+          <img class="about-img-main" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop" alt="Luméra products" />
+          <img class="about-img-accent" src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=400&auto=format&fit=crop" alt="Skincare detail" />
+        </div>
+      </div>
+      <div class="about-content-col">
+        <p class="section-tag">Our Story</p>
+        <h2 class="section-title">About Luméra</h2>
+        <p>Luméra is a luxury skincare brand designed for modern self-care. Our products combine gentle ingredients with premium formulations to create healthy, glowing skin.</p>
+        <p>We believe skincare should feel elegant, calming, and empowering. Every product is carefully crafted to deliver beauty with simplicity.</p>
+        <div class="about-highlights">
+          <div class="highlight">
+            <strong>2018</strong>
+            <span>Founded</span>
+          </div>
+          <div class="highlight">
+            <strong>35+</strong>
+            <span>Products</span>
+          </div>
+          <div class="highlight">
+            <strong>12K+</strong>
+            <span>Customers</span>
+          </div>
+        </div>
+        <a href="#products" class="about-btn">Explore Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-header">
+      <p class="section-tag">Happy Skin</p>
+      <h2 class="section-title">Customer Reviews</h2>
+      <div class="stars-row">★★★★★ <span>4.9 out of 5</span></div>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="t-stars">★★★★★</div>
+        <p>"Absolutely love the minimalist packaging and the moisturizer feels amazing on my skin! My skin has never felt this smooth."</p>
+        <div class="t-author">
+          <div class="t-avatar">A</div>
+          <div>
+            <h4>Aanya S.</h4>
+            <small>Verified Buyer</small>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card featured-review">
+        <div class="t-stars">★★★★★</div>
+        <p>"The serum gave my skin a healthy glow within a week. I've tried so many brands but Luméra truly delivers. Highly recommended!"</p>
+        <div class="t-author">
+          <div class="t-avatar">K</div>
+          <div>
+            <h4>Keerthi R.</h4>
+            <small>Verified Buyer</small>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="t-stars">★★★★★</div>
+        <p>"Elegant products with premium quality. The website experience is beautiful too. Will absolutely be ordering again."</p>
+        <div class="t-author">
+          <div class="t-avatar">M</div>
+          <div>
+            <h4>Meera P.</h4>
+            <small>Verified Buyer</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="newsletter-inner">
+      <p class="section-tag">Stay Glowing</p>
+      <h2>Get 10% Off Your First Order</h2>
+      <p>Subscribe for skincare tips, exclusive offers, and early access to new arrivals.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-header">
+      <p class="section-tag">Get In Touch</p>
+      <h2 class="section-title">Contact Us</h2>
+    </div>
+    <div class="contact-inner">
+      <div class="contact-info">
+        <div class="contact-detail">
+          <span>📧</span>
+          <div>
+            <strong>Email</strong>
+            <p>hello@lumera.com</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span>📍</span>
+          <div>
+            <strong>Location</strong>
+            <p>Mumbai, India</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span>⏰</span>
+          <div>
+            <strong>Support Hours</strong>
+            <p>Mon–Fri, 9am–6pm IST</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+        </div>
+        <select>
+          <option value="" disabled selected>Subject</option>
+          <option>Order Inquiry</option>
+          <option>Product Question</option>
+          <option>Returns & Refunds</option>
+          <option>Other</option>
+        </select>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message ✦</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-accent">✦</span>
+        <h3 class="logo">LUMÉRA</h3>
+        <p>Luxury skincare for the modern you. Crafted with love and pure ingredients.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Pinterest">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83.19-.77 1.27-5.38 1.27-5.38s-.32-.65-.32-1.61c0-1.51.88-2.64 1.97-2.64.93 0 1.38.7 1.38 1.54 0 .94-.6 2.34-.91 3.64-.26 1.09.54 1.97 1.61 1.97 1.93 0 3.23-2.47 3.23-5.39 0-2.23-1.51-3.79-3.67-3.79-2.5 0-3.97 1.87-3.97 3.81 0 .75.29 1.56.65 2 .07.08.08.15.06.24-.07.27-.21.87-.24 1-.04.16-.13.2-.3.12-1.12-.52-1.82-2.17-1.82-3.49 0-2.84 2.06-5.45 5.94-5.45 3.12 0 5.55 2.22 5.55 5.19 0 3.1-1.95 5.59-4.66 5.59-.91 0-1.77-.47-2.06-1.03l-.56 2.09c-.2.78-.75 1.76-1.12 2.36.85.26 1.75.4 2.67.4 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#products">All Products</a></li>
+          <li><a href="#products">Cleansers</a></li>
+          <li><a href="#products">Serums</a></li>
+          <li><a href="#products">Moisturizers</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#contact">Shipping Info</a></li>
+          <li><a href="#contact">Returns</a></li>
+          <li><a href="#contact">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Luméra Skincare | Designed by Hamsini Govvala</p>
+      <div class="payment-icons">
+        <span>VISA</span>
+        <span>MC</span>
+        <span>PayPal</span>
+        <span>UPI</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- QUICK VIEW MODAL -->
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="product-modal" id="productModal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
